@@ -15,7 +15,7 @@ import timeit
 OPTIONS = Options()
 OPTIONS.headless = True
 OPTIONS.add_argument('--proxy-server=%s' % PROXY)
-DRIVER = webdriver.Firefox(options=OPTIONS,executable_path=os.getcwd()+"\\geckodriver.exe")
+DRIVER = webdriver.Firefox(options=OPTIONS,executable_path=os.getcwd()+"\\geckodriver.exe",service_log_path='nul')
 
 f = Figlet(font="standard")
 def welcome():
