@@ -2,8 +2,8 @@
 Clickdomains is a tool made in python  for visual inspection of websites across a large amount of hosts and is convenient for quickly gaining an overview of HTTP-based attack surface
 
 # INSTALLATION
-1.Clone the github repository
-2.Go to project directory and run Clickdomains.py VOILA !!
+* Clone the github repository
+* Go to project directory and run Clickdomains.py VOILA !!
 
 # USAGE
 ```
