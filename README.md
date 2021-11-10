@@ -1,2 +1,11 @@
 # clickdomains
-This software is used to take screenshot of given set of doimains , development in progress 
+Clickdomains is a tool made in python  for visual inspection of websites across a large amount of hosts and is convenient for quickly gaining an overview of HTTP-based attack surface
+
+# INSTALLATION
+1.Clone the github repository
+2.Go to project directory and run Clickdomains.py VOILA !!
+
+# USAGE
+```
+python clickdomains.py --help
+```
