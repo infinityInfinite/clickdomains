@@ -99,7 +99,5 @@ def main(filepath,domains,delay,savepath):
 
 if __name__ == "__main__":
     main()
-   
-#test_function("https://208.118.225.100.rakuten.com")
-    
+      
     
