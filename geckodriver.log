@@ -38,3 +38,39 @@ JavaScript warning: https://www.redditstatic.com/accountmanager/ssoOneTap.849eb2
 
 ###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1636551173881	geckodriver	INFO	Listening on 127.0.0.1:60958
+1636551176972	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--proxy-server=127.0.0.1:8080" "-no-remote" "-profile" "C:\\Users\\ejinb\\AppData\\Local\\Temp\\rust_mozprofile6zY6Ck"
+*** You are running in headless mode.
+1636551177544	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\ejinb\\AppData\\Local\\Temp\\rust_mozprofile6zY6Ck\\search.json.mozlz4", (void 0)))
+1636551178931	Marionette	INFO	Listening on port 60970
+1636551179047	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1636551179065	Marionette	INFO	Stopped listening on port 60970
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 419))
+console.error: services.settings: 
+  main/query-stripping Signature failed  TypeError: NetworkError: Network request failed
+1636552856007	geckodriver	INFO	Listening on 127.0.0.1:61827
+1636552859099	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--proxy-server=127.0.0.1:8080" "-no-remote" "-profile" "C:\\Users\\ejinb\\AppData\\Local\\Temp\\rust_mozprofileNaHAB5"
+*** You are running in headless mode.
+1636552859353	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\ejinb\\AppData\\Local\\Temp\\rust_mozprofileNaHAB5\\search.json.mozlz4", (void 0)))
+1636552860263	Marionette	INFO	Listening on port 61841
+1636552860641	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1636552860654	Marionette	INFO	Stopped listening on port 61841
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 419))
+1636552972244	geckodriver	INFO	Listening on 127.0.0.1:61919
+1636552975272	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "--proxy-server=127.0.0.1:8080" "-no-remote" "-profile" "C:\\Users\\ejinb\\AppData\\Local\\Temp\\rust_mozprofilet2L4nw"
+*** You are running in headless mode.
+1636552975573	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\ejinb\\AppData\\Local\\Temp\\rust_mozprofilet2L4nw\\search.json.mozlz4", (void 0)))
+1636552976566	Marionette	INFO	Listening on port 61938
+1636552976804	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1636552980363	Marionette	INFO	Stopped listening on port 61938
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+

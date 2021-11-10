@@ -15,7 +15,7 @@ import timeit
 OPTIONS = Options()
 OPTIONS.headless = True
 OPTIONS.add_argument('--proxy-server=%s' % PROXY)
-
+DRIVER = webdriver.Firefox(options=OPTIONS,executable_path=os.getcwd()+"\\geckodriver.exe")
 
 f = Figlet(font="standard")
 def welcome():
@@ -79,7 +79,6 @@ def main(filepath,domains,delay,savepath):
     welcome()
     print(colored("[#] Time delay has been set to {} seconds".format(delay),'blue'))
     list_of_domain = []
-    global DRIVER = webdriver.Firefox(options=OPTIONS,executable_path=os.getcwd()+"\\geckodriver.exe")
     if filepath:
         f = open(filepath,"r")
         for i in f:
