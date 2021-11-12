@@ -18,7 +18,6 @@ OPTIONS = Options()
 OPTIONS.headless = True
 OPTIONS.add_argument('--proxy-server=%s' % PROXY)
 DRIVER = webdriver.Firefox(options=OPTIONS,executable_path=os.getcwd()+"\\geckodriver.exe",service_log_path='nul')
-end  = False
 os.system('color')
 f = Figlet(font="standard")
 
@@ -44,7 +43,6 @@ def take_screenshots(i,delay,save_path):
             print(f"[+] {colored(save_url,'blue')} : {colored('screenshot has been saved','green')}")
     except KeyboardInterrupt:
         print(colored("User aborted operation..","red"))
-        end  = True
         sys.exit()
         DRIVER.quit()
     except Exception as e:
@@ -71,7 +69,7 @@ def filter_urlforsaving(url):
 def save_screenshot(domain_name,save_path):
     file_name = domain_name.replace(".","_")
     output_name = save_path+file_name+".png"
-    print(f"saved on {output_name}")
+    print(colored(f"saved on {output_name}","green"))
     DRIVER.save_screenshot(output_name)
 
 
