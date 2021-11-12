@@ -2,7 +2,8 @@ from pyfiglet import Figlet
 from termcolor import colored
 from constants import PROXY,DEFAULT_DIR                
 from selenium import webdriver
-from selenium.webdriver.firefox.options import Options 
+from selenium.webdriver.firefox.options import Options
+import concurrent.futures
 import os
 import click
 import requests
@@ -10,16 +11,20 @@ import re
 import time
 import sys
 import timeit
+import threading
 
 
 OPTIONS = Options()
 OPTIONS.headless = True
 OPTIONS.add_argument('--proxy-server=%s' % PROXY)
 DRIVER = webdriver.Firefox(options=OPTIONS,executable_path=os.getcwd()+"\\geckodriver.exe",service_log_path='nul')
-
+end  = False
+os.system('color')
 f = Figlet(font="standard")
+
+
 def welcome():
-    os.system('color')
+    
     print(colored(f.renderText("ClickDomain"),"green"))
 
 def take_screenshots(i,delay,save_path):
@@ -39,6 +44,7 @@ def take_screenshots(i,delay,save_path):
             print(f"[+] {colored(save_url,'blue')} : {colored('screenshot has been saved','green')}")
     except KeyboardInterrupt:
         print(colored("User aborted operation..","red"))
+        end  = True
         sys.exit()
         DRIVER.quit()
     except Exception as e:
@@ -69,6 +75,17 @@ def save_screenshot(domain_name,save_path):
     DRIVER.save_screenshot(output_name)
 
 
+def startpool(list_of_domains,delay,savepath):
+    for domain in list_of_domains:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+            if end  == False:
+                executor.submit(take_screenshots,domain,delay,savepath)
+            else:
+                print("Pog it came here !!")
+                executor.shutdown()
+                DRIVER.quit()
+                sys.exit()
+
 
 @click.command()
 @click.option('-filepath','-fp',default=None,help="path to file that contains list of domains to take screenshot")
@@ -78,25 +95,24 @@ def save_screenshot(domain_name,save_path):
 def main(filepath,domains,delay,savepath):
     welcome()
     print(colored("[#] Time delay has been set to {} seconds".format(delay),'blue'))
-    list_of_domain = []
+    list_of_domains = []
     if filepath:
         f = open(filepath,"r")
         for i in f:
             #print(i)
             filtered_i = i.replace("\n","")
-            take_screenshots(filtered_i,delay,savepath)
-            
+            list_of_domains.append(filtered_i)
+        startpool(list_of_domains,delay,savepath)
+                            
     elif domains:
-        list_of_domain = list(domains)
-        print(colored("[#] List of domain : {}".format(list_of_domain),'yellow'))
-        for i in list_of_domain:
-            take_screenshots(i,delay,savepath)
-
+        list_of_domains = list(domains)
+        print(colored("[#] List of domain : {}".format(list_of_domains),'yellow'))
+        startpool(list_of_domains,delay,savepath)
+    
+    
     print(colored("[#] Program has ended..","blue"))
     DRIVER.quit()
     
-    
-
 if __name__ == "__main__":
     main()
       
