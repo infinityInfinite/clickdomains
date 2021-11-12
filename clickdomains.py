@@ -77,14 +77,7 @@ def save_screenshot(domain_name,save_path):
 
 def startpool(list_of_domains,delay,savepath):
     for domain in list_of_domains:
-        with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
-            if end  == False:
-                executor.submit(take_screenshots,domain,delay,savepath)
-            else:
-                print("Pog it came here !!")
-                executor.shutdown()
-                DRIVER.quit()
-                sys.exit()
+        take_screenshots(domain,delay,savepath)
 
 
 @click.command()
